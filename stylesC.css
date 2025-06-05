@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.carta-body {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #ffe8e8, #fff0f5);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+/* Container da carta */
+.carta-container {
+  background: #fff;
+  border: 3px solid #ff4d6d;
+  border-radius: 12px;
+  padding: 2.5rem;
+ 
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Título da carta */
+.carta-title {
+  font-size: 2.5rem;
+  color: #d6336c;
+  margin-bottom: 1.5rem;
+}
+
+/* Conteúdo da carta */
+.carta-conteudo p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Assinatura */
+.assinatura {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #ff4d6d;
+}
+
+/* Coração flutuante animado */
+.heart-float {
+  position: absolute;
+  font-size: 2.5rem;
+  color: #ff4d6d;
+  animation: float 5s infinite ease-in-out;
+  top: 10%;
+  left: 10%;
+}
+
+.heart-float.delay {
+  top: 80%;
+  left: 85%;
+  animation-delay: 2.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Botão de voltar com coração */
+.back-home {
+  width: 50px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+.home-text {
+  position: absolute;
+  top: 1rem;
+  right: 4rem; /* ajuste conforme o espaço necessário para ficar acima do coração */
+  font-size: 1rem;
+  color: #d6336c;
+  z-index: 2;
+}
+
+.back-home {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 3px solid #ff2e63;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.back-home:hover {
+  transform: scale(1.1);
+}
+
+/* Coração de fundo grande, sem interferir no clique */
+.heart-bg {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  color: #ff4d6d;
+  opacity: 0.2;
+  animation: beat 1.5s infinite;
+  z-index: 0;
+}

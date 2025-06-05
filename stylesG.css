@@ -1,0 +1,179 @@
+/* =============================================
+   ESTILOS ESPECÍFICOS PARA A PÁGINA DA GALERIA
+   ============================================= */
+
+/* Define o fundo geral e posicionamento do conteúdo */
+.gallery-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #fff0f5, #ffe8e8);
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Título grande e centralizado da galeria */
+.gallery-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #d6336c;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+}
+
+/* Coração de fundo grande, sem interferir no clique */
+.heart-bg {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  color: #ff4d6d;
+  opacity: 0.2;
+  animation: beat 1.5s infinite;
+  z-index: 0;
+}
+
+/* Foto/botão no canto para voltar ao index */
+.back-home {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 3px solid #ff2e63;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.back-home:hover {
+  transform: scale(1.1);
+}
+
+/* Container principal das fotos, exibindo em grid flexível */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cada item da galeria: define tamanho, borda e animação */
+.photo-item {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 4px solid #ff4d6d;
+  position: relative;
+  animation: floatAround 8s ease-in-out infinite;
+}
+
+/* Imagem dentro de cada item: cobre todo o frame */
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animação que faz as fotos “flutuarem” levemente */
+@keyframes floatAround {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -15px) rotate(2deg);
+  }
+  50% {
+    transform: translate(-10px, 10px) rotate(-2deg);
+  }
+  75% {
+    transform: translate(15px, 5px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* Reaproveita animação de batimento para o coração de fundo */
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Responsividade: itens se ajustam em telas menores */
+@media screen and (max-width: 600px) {
+  .photo-gallery {
+    gap: 0.5rem;
+  }
+
+  .photo-item {
+    width: 45%;
+    height: 150px;
+    border-width: 3px;
+  }
+
+  .gallery-title {
+    font-size: 2.5rem;
+  }
+
+  .heart-bg {
+    font-size: 4rem;
+    top: 5%;
+  }
+}
+
+.home-text {
+  position: absolute;
+  top: 1rem;
+  right: 4rem; /* ajuste conforme o espaço necessário para ficar acima do coração */
+  font-size: 1rem;
+  color: #d6336c;
+  z-index: 2;
+}
+
+/* Corações flutuantes e pulsando no fundo */
+.heart-bg {
+  position: absolute;
+  font-size: 3rem;
+  color: #ff4d6d;
+  opacity: 0.3;
+  animation: pulse 2s infinite ease-in-out;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Diferentes posições para cada coração */
+.heart1 { top: 5%; left: 10%; }
+.heart2 { top: 20%; right: 15%; }
+.heart3 { top: 40%; left: 5%; }
+.heart4 { bottom: 20%; right: 10%; }
+.heart5 { bottom: 5%; left: 30%; }
+
+/* Animação de batimento */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}

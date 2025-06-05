@@ -1,0 +1,138 @@
+/* Zera margens e espaçamentos padrões do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Força o modo de escrita horizontal */
+body {
+  writing-mode: horizontal-tb;
+}
+
+/* Estilos gerais do body */
+body {
+  font-family: "Dancing Script", cursive;
+  background: linear-gradient(135deg, #ffe8e8, #fff0f5);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container principal para centralizar tudo e aumentar proporções */
+.container {
+  background-color: #ffffff;
+  border: 3px solid #ff4d6d;
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Coração decorativo no topo */
+.heart {
+  font-size: 4rem;
+  color: #ff2e63;
+  animation: beat 1s infinite;
+  margin-bottom: 1rem;
+}
+
+/* Estilo do título principal */
+.title {
+  font-size: 3rem;
+  color: #d6336c;
+  margin-bottom: 1.5rem;
+}
+
+/* ================================================
+   Container de quatro botões vazios
+   ================================================ */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button-group .btn {
+  width: 120px;                 /* largura fixa para uniformizar */
+  height: 50px;                 /* altura fixa para uniformizar */
+  background-color: #fff5f8;    /* fundo suave */
+  color: #d6336c;               /* texto em tom rosa escuro */
+  border: 2px solid #ff4d6d;    /* borda rosa viva */
+  border-radius: 8px;
+  font-size: 1.2rem;
+  padding: 0;                   /* sem padding interno adicional */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group .btn:hover {
+  background-color: #ffe8f0;     /* fundo mais claro ao passar o mouse */
+  color: #ff2e63;                /* texto mais vibrante */
+  transform: none;               /* sem zoom no hover */
+}
+
+/* Caixa da mensagem */
+.message-box {
+  background: #fff5f8;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.message {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* Estilo da assinatura, texto maior e itálico */
+.signature {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+/* Container da foto com borda mais grossa e maior */
+.photo-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  background: #fff;
+  border: 3px solid #ff4d6d;
+  border-radius: 10px;
+  margin: 0 auto 2rem;
+}
+
+.photo-container p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.photo-container img {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #ff4d6d;
+}
+
+/* Rodapé */
+.footer p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Animação do coração “batendo” */
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
